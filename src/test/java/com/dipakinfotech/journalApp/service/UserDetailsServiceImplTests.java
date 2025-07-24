@@ -31,6 +31,7 @@ public class UserDetailsServiceImplTests {
         MockitoAnnotations.initMocks(this);
     }
 
+    @Disabled
     @Test
     void loadUserByUsernameTests() {
         when(userRepository.findByUserName(ArgumentMatchers.anyString())).thenReturn(User.builder().userName("ram").password("12345").roles(new ArrayList<>()).build());

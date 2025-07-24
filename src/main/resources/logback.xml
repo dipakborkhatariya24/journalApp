@@ -20,7 +20,7 @@
                 10MB
             </maxsize>
             <maxHistroy>
-                10
+                100
             </maxHistroy>
         </rolling>
         <encoder>
