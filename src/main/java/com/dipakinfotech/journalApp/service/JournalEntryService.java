@@ -4,6 +4,8 @@ import com.dipakinfotech.journalApp.Repository.JournalEntryRepository;
 import com.dipakinfotech.journalApp.entity.JournalEntry;
 import com.dipakinfotech.journalApp.entity.User;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,7 @@ public class JournalEntryService {
 
     @Autowired
     private UserService userService;
+
 
     @Transactional
     public void saveEntry(JournalEntry journalEntry, String userName) {
@@ -47,6 +50,7 @@ public class JournalEntryService {
     public Optional<JournalEntry> findById(ObjectId id) {
         return journalEntryRepository.findById(id);
     }
+
     @Transactional
     public boolean deleteById(ObjectId id, String userName) {
         boolean removed = false;
@@ -57,8 +61,7 @@ public class JournalEntryService {
                 userService.saveUser(user);
                 journalEntryRepository.deleteById(id);
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             throw new RuntimeException("An error occured while deleting the entry");
         }
