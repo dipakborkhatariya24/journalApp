@@ -1,35 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
+    <!-- Show internal Logback status in console -->
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
+
+    <!-- Console Appender -->
     <appender name="myConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>
-                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-            </pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
+    <!-- Rolling File Appender -->
     <appender name="myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rolling class="ch.qos.logback.core.rolling.RollingFileAppender.SizeAndTimeBaseRollingPolicy">
-            <file>
-                journalApp.log
-            </file>
-            <fileNamePattern>
-                journalApp-%d{yy-MM-dd_HH-mm}.%i.log
-            </fileNamePattern>
-            <maxsize>
-                10MB
-            </maxsize>
-            <maxHistroy>
-                100
-            </maxHistroy>
-        </rolling>
+        <!-- Active log file (absolute path) -->
+        <file>E:/Learn Java/Advanced Java/journalApp/src/main/resources/logs/journalApp.log</file>
+        <append>true</append>
+
         <encoder>
-            <pattern>
-                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-            </pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
+
+        <!-- Rolling policy: daily + size -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>E:/Learn Java/Advanced
+                Java/journalApp/src/main/resources/logs/journalApp-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>10000</maxHistory>
+            <totalSizeCap>5GB</totalSizeCap>
+        </rollingPolicy>
     </appender>
 
+    <!-- Root Logger -->
     <root level="INFO">
         <appender-ref ref="myConsoleAppender"/>
         <appender-ref ref="myFileAppender"/>

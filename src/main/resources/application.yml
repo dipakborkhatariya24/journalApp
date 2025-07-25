@@ -8,7 +8,24 @@ spring:
       database: journaldb
       auto-index-creation: true
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: borkhatariyadipak24@gmail.com
+    password: cedl mndb wevd ebam
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
 server:
   port: 8080
   servlet:
     context-path: /journal
+
+weather:
+  api:
+    key: "4e0f5ee0ff2e7399b33dea1632440101"

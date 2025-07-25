@@ -1,6 +1,7 @@
 // POJO Class
 package com.dipakinfotech.journalApp.entity;
 
+import com.dipakinfotech.journalApp.enums.Sentiment;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -22,9 +23,9 @@ public class JournalEntry {
     private ObjectId id;
     @NonNull
     private String title;
-    private  String content;
+    private String content;
     private LocalDateTime date;
-
+    private Sentiment sentiment;
 
 
 }
