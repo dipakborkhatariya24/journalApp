@@ -8,6 +8,11 @@ spring:
       database: journaldb
       auto-index-creation: true
 
+    redis:
+      host: redis-13705.crce206.ap-south-1-1.ec2.redns.redis-cloud.com
+      port: 13705
+      password: sSaAZa5VIhM0Lo3Rq5EonznAWMm9sVE9
+
   mail:
     host: smtp.gmail.com
     port: 587
@@ -19,6 +24,7 @@ spring:
           auth: true
           starttls:
             enable: true
+
 
 
 server:
