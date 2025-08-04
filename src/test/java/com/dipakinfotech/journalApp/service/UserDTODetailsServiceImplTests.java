@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import static org.mockito.Mockito.when;
 
 @Disabled
-public class UserDetailsServiceImplTests {
+public class UserDTODetailsServiceImplTests {
 
     @InjectMocks
     private UserDetailsServiceImpl userDetailsService;

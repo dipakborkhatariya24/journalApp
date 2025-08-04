@@ -2,6 +2,16 @@ spring:
   application:
     name: Journal App
 
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: "768353140216-pkvrbg1qh7c2jihl8p1kubf00sdcqspn.apps.googleusercontent.com"
+            client-secret: "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"
+  #            client-id: ${GOOGLE_CLIENT_ID}
+  #            client-secret: ${GOOGLE_CLIENT_SECRET}
+
   data:
     mongodb:
       uri: mongodb+srv://borkhatariyadipak24:mfaxm3x0odL9kuEC@cluster0.ihorrrx.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
@@ -28,9 +38,20 @@ spring:
 
 
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /journal
+
+logging:
+  file:
+    name: logs/journalApp.log
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
 
 weather:
   api:
