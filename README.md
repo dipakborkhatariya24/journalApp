@@ -149,6 +149,35 @@ journalApp/
 
 ---
 
+## 🔐 Environment Variables
+
+Create a `.env` file in the root directory and add the following variables:
+
+```env
+# Google OAuth2 Credentials
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# MongoDB Configuration
+MONGODB_URI=your-mongodb-uri
+
+# Redis Configuration
+REDIS_HOST=your-redis-host
+REDIS_PORT=your-redis-port
+REDIS_PASSWORD=your-redis-password
+
+# Mail Configuration
+MAIL_USERNAME=your-email@example.com
+MAIL_PASSWORD=your-app-specific-password
+
+# Weather API Key
+WEATHER_API_KEY=your-weatherstack-api-key
+```
+
+> 📌 **Note:** Never commit actual credentials or secrets to version control. Always use environment variables or secrets management tools.
+
+---
+
 ## 📫 Contact
 
 **Dipak Borkhatariya**  
