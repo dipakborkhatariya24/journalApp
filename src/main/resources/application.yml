@@ -7,35 +7,31 @@ spring:
       client:
         registration:
           google:
-            client-id: "768353140216-pkvrbg1qh7c2jihl8p1kubf00sdcqspn.apps.googleusercontent.com"
-            client-secret: "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"
-  #            client-id: ${GOOGLE_CLIENT_ID}
-  #            client-secret: ${GOOGLE_CLIENT_SECRET}
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
 
   data:
     mongodb:
-      uri: mongodb+srv://borkhatariyadipak24:mfaxm3x0odL9kuEC@cluster0.ihorrrx.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
+      uri: ${MONGODB_URI}
       database: journaldb
       auto-index-creation: true
 
     redis:
-      host: redis-13705.crce206.ap-south-1-1.ec2.redns.redis-cloud.com
-      port: 13705
-      password: sSaAZa5VIhM0Lo3Rq5EonznAWMm9sVE9
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: borkhatariyadipak24@gmail.com
-    password: cedl mndb wevd ebam
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
-
-
 
 server:
   port: 8081
@@ -55,4 +51,4 @@ springdoc:
 
 weather:
   api:
-    key: "4e0f5ee0ff2e7399b33dea1632440101"
+    key: ${WEATHER_API_KEY}
